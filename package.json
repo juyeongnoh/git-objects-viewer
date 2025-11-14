@@ -1,0 +1,58 @@
+{
+  "name": "git-objects-viewer",
+  "displayName": "Git Objects Viewer",
+  "description": "Prints git objects in plain text.",
+  "publisher": "JamesNoh",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "git-objects-view",
+          "name": "Git Objects"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "git-object-viewer.showObjectContent",
+        "title": "Show Git Object Content"
+      },
+      {
+        "command": "git-object-viewer.openGitObject",
+        "title": "Open as Git Object"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "git-object-viewer.openGitObject",
+          "when": "resourcePath =~ /\\.git\\/objects\\/[0-9a-f]{2}\\/[0-9a-f]+$/",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.105.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.7.0",
+    "eslint": "^9.39.1"
+  }
+}
