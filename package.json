@@ -3,6 +3,10 @@
   "displayName": "Git Objects Viewer",
   "description": "Prints git objects in plain text.",
   "publisher": "JamesNoh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juyeongnoh/git-objects-viewer"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.105.0"
